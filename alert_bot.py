@@ -1,6 +1,6 @@
 import requests
 from datetime import datetime
-from config import BOT_TOKEN, CHAT_ID, PRICE_TRESHOLD
+from config import BOT_TOKEN, CHAT_ID, PRICE_THRESHOLD
 
 TEXT = f"Dataset aggiornati con successo il {datetime.now().strftime('%Y-%m-%d')}"
 
@@ -18,7 +18,7 @@ def telegram_bot_sendtext(text=TEXT):
         print(f"Error sending message: {e}")
 
 
-def check_price_alert(df, supplement, treshold=PRICE_TRESHOLD):
+def check_price_alert(df, supplement, threshold=PRICE_THRESHOLD):
 
     today = datetime.now().strftime('%Y-%m-%d')
 
@@ -33,4 +33,5 @@ def check_price_alert(df, supplement, treshold=PRICE_TRESHOLD):
                 message += f"Gusto {row['flavour']}\n Peso: {row['weight in g']}g\n Prezzo: {row['price_discounted']} {row['price_currency']}\n"
             telegram_bot_sendtext(message)
         else:
+
             telegram_bot_sendtext(f"Nessun errore di prezzo trovato per {supplement} questa settimana.\nCi sentiamo alla prossima!")
