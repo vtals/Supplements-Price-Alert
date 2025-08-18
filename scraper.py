@@ -30,7 +30,7 @@ def get_protein_data(url=PROTEIN_URL):
 protein_df = pd.DataFrame(get_protein_data(PROTEIN_URL), columns=['flavour', 'weight in g', 'price', 'price_discounted', 'price_currency'])
 protein_df['date'] = "2025-08-17" #project start date
 
-protein_df.to_csv('bulk_protein_data.csv', index=False)
+protein_df.to_csv('data/bulk_protein_data.csv', index=False)
 
     
 
@@ -55,9 +55,9 @@ def get_creatine_data(url=CREATINE_URL):
     except requests.exceptions.RequestException as e:
         print(f"Error fetching creatine data: {e}")
         return []
-    
-    
+
+
 creatine_df = pd.DataFrame(get_creatine_data(CREATINE_URL), columns=['flavour', 'weight in g', 'price', 'price_discounted', 'price_currency'])
 creatine_df['date'] = "2025-08-17" #project start date
 
-creatine_df.to_csv('bulk_creatine_data.csv', index=False)
+creatine_df.to_csv('data/bulk_creatine_data.csv', index=False)
