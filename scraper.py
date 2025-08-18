@@ -16,8 +16,8 @@ def get_protein_data(url=PROTEIN_URL):
             price_currency = offer.get('priceCurrency') 
             sku = offer.get('sku').split('-')
             flavour = sku[2]
-            weight = sku[-1]      
-            l.append((flavour, weight, price, price_discounted, price_currency))  
+            weight_in_g = sku[-1]      
+            l.append((flavour, weight_in_g, price, price_discounted, price_currency))  
 
         return l
 
@@ -27,7 +27,7 @@ def get_protein_data(url=PROTEIN_URL):
         return []
     
     
-protein_df = pd.DataFrame(get_protein_data(PROTEIN_URL), columns=['flavour', 'weight in g', 'price', 'price_discounted', 'price_currency'])
+protein_df = pd.DataFrame(get_protein_data(PROTEIN_URL), columns=['flavour', 'weight_in_g', 'price', 'price_discounted', 'price_currency'])
 protein_df['date'] = "2025-08-17" #project start date
 
 protein_df.to_csv('data/bulk_protein_data.csv', index=False)
@@ -47,8 +47,8 @@ def get_creatine_data(url=CREATINE_URL):
             price_currency = offer.get('priceCurrency') 
             sku = offer.get('sku').split('-')
             flavour = sku[2]
-            weight = sku[3]      
-            l.append((flavour, weight, price, price_discounted, price_currency))
+            weight_in_g = sku[3]      
+            l.append((flavour, weight_in_g, price, price_discounted, price_currency))
         
         return l
 
@@ -57,7 +57,8 @@ def get_creatine_data(url=CREATINE_URL):
         return []
 
 
-creatine_df = pd.DataFrame(get_creatine_data(CREATINE_URL), columns=['flavour', 'weight in g', 'price', 'price_discounted', 'price_currency'])
+creatine_df = pd.DataFrame(get_creatine_data(CREATINE_URL), columns=['flavour', 'weight_in_g', 'price', 'price_discounted', 'price_currency'])
 creatine_df['date'] = "2025-08-17" #project start date
 
 creatine_df.to_csv('data/bulk_creatine_data.csv', index=False)
+
