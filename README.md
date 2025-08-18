@@ -4,6 +4,11 @@ A Python project that scrapes prices of protein and creatine products from Bulk.
 
 ---
 
+## **Background**
+I love gym and I'm used to buy supplements on Bulk.com. One day I noticed an absurd price error: strawberry vegan protein powder price was 0.00 EUR. That's what made me think about this project and now I've done it. I'm not a computer scientist (as you can imagine), I'm a statistics student with a programming passion, but I thought this could be an interesting project to enhance my python skills. Of course this project isn't perfect and I probably made some mistake, but I believe this is a good starting point to become familiar with Github and programming in general!
+
+---
+
 ## **Features**
 - Automatic extraction of product data (flavour, weight, price, discounted price, currency)
 - Saves data into two separate CSVs (`bulk_protein_data.csv` and `bulk_creatine_data.csv`)
