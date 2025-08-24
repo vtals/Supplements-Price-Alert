@@ -32,7 +32,7 @@ project/
 │   └── bulk_creatine_data.csv
 ├── .gitignore
 ├── requirements.txt
-├── example.env        # Example file for data required
+├── example.env        # Example file for required data
 └── README.md
 ```
 
